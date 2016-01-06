@@ -1,0 +1,40 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Q1: Overall, how well does our website meet your needs?  :</strong>
+
+  <%= @survey.Q1 %>
+</p>
+
+<p>
+  <strong>Q2:  How easy was it to find what you were looking for on our website? :</strong>
+  <%= @survey.Q2 %>
+</p>
+
+<p>
+  <strong>Q3:  Did it take you more or less time than you expected to find what you were looking for on our website? :</strong>
+  <%= @survey.Q3 %>
+</p>
+
+<p>
+  <strong>Q4:  How visually appealing is our website? :</strong>
+  <%= @survey.Q4 %>
+</p>
+
+<p>
+  <strong>Q5: How easy is it to understand the information on our website? :</strong>
+  <%= @survey.Q5 %>
+</p>
+
+<p>
+  <strong>Q6: How much do you trust the information on our website? :</strong>
+  <%= @survey.Q6 %>
+</p>
+
+<p>
+  <strong>Q7: Do you have any other comments about how we can improve our website?</strong><br>
+  <%= @survey.Q %>
+</p>
+
+<%= link_to 'Edit', edit_survey_path(@survey) %> |
+<%= link_to 'Back', surveys_path %>

@@ -1,0 +1,18 @@
+<p id="notice"><%= notice %></p>
+
+
+<div class="panel panel-default">
+  <div class="panel-heading"><strong>Title: </strong><%= @bookstore.title %></div>
+</div>
+  <div class="panel panel-default">
+    <div class="panel-body">
+      <strong>Description: </strong><%= @bookstore.description %><br>
+      <strong>Author: </strong><%= @bookstore.author %><br>
+      <strong>Price:</strong><%= @bookstore.price %>
+    </div>
+  <div class="panel-footer">
+
+  </div>
+</div>
+<%= link_to 'Edit', edit_bookstore_path(@bookstore) %> |
+<%= link_to 'Back', bookstores_path %>

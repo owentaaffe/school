@@ -1,0 +1,53 @@
+<%= form_for(@survey) do |f| %>
+  <% if @survey.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@survey.errors.count, "error") %> prohibited this survey from being saved:</h2>
+
+      <ul>
+      <% @survey.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :Q1 %>
+    <strong>: Overall, how well does our website meet your needs?</strong><br>
+    <%= f.number_field :Q1 %>
+  </div>
+  <div class="field">
+    <%= f.label :Q2 %>
+    <strong>: How easy was it to find what you were looking for on our website? </strong><br>
+    <%= f.number_field :Q2 %>
+  </div>
+  <div class="field">
+    <%= f.label :Q3 %>
+    <strong>:   Did it take you more or less time than you expected to find what you were looking for on our website?
+    </strong><br>
+    <%= f.number_field :Q3 %>
+  </div>
+  <div class="field">
+    <%= f.label :Q4 %>
+    <strong>:   How visually appealing is our website?</strong><br>
+    <%= f.number_field :Q4 %>
+  </div>
+  <div class="field">
+    <%= f.label :Q5 %>
+    <strong>: How easy is it to understand the information on our website? </strong><br>
+    <%= f.number_field :Q5 %>
+  </div>
+  <div class="field">
+    <%= f.label :Q6 %>
+    <strong>: How much do you trust the information on our website? </strong><br>
+    <%= f.number_field :Q6 %>
+  </div>
+  <div class="field">
+    <%= f.label :Q %>7
+    <strong>:  Do you have any other comments about how we can improve our website?</strong><br>
+    <%= f.text_field :Q %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

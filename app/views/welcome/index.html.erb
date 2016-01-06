@@ -1,0 +1,31 @@
+<div class="jumbotron">
+
+  <%= image_tag "college.JPG", class: 'height = 100%' %>
+</div>
+<hr>
+<div class="row">
+  <div class="col-sm-6 col-md-4">
+    <div class="thumbnail">
+      <%= image_tag "surveypic.png", class: 'height = 100%' %>
+    </div>
+    <p><%= link_to 'Survey', new_survey_path, class: "btn btn-primary btn-lg" %></p>
+  </div>
+
+  <div class="row">
+  <div class="col-sm-6 col-md-4">
+    <div class="thumbnail">
+      <%= image_tag "course.jpe", class: 'height = 100%' %>
+    </div>
+    <p><%= link_to 'Courses', courses_path, class: "btn btn-success btn-lg" %> </p>
+  </div>
+
+
+  <div class="row">
+  <div class="col-sm-6 col-md-4">
+    <div class="thumbnail">
+      <%= image_tag "Books.jpe", class: 'height = 100%' %>
+    </div>
+    <p><%= link_to 'bookstore', bookstores_path, class: "btn btn-danger btn-lg" %> </p>
+  </div>
+
+</div>

@@ -1,0 +1,34 @@
+
+
+
+<h1 align="center">Listing books</h1>
+<h4 align="center"><%= link_to 'Add new book', new_bookstore_path %></h4><br>
+  <% @bookstores.each do |bookstore| %>
+  <div class="row">
+    <div class="col-xs-10 ">
+      <div class="well well-lg">
+        <div class="book-title">
+          <h1 align="center"><strong>Title: </strong>
+            <%= link_to bookstore.title, bookstore_url(bookstore) %>
+          </h1>
+        </div>
+        <div class="article-body">
+          <h3>Description:</h3>
+           <p><%= bookstore.description %></p><br>
+          <p>Author: <%= bookstore.author %></p><br>
+          <p>Price: <%= bookstore.price %></p>
+         </div><br>
+
+       <%= link_to 'Show', bookstore %>
+       <%= link_to 'Edit', edit_bookstore_path(bookstore) %>
+       <%= link_to 'Destroy', bookstore, method: :delete, data: { confirm: 'Are you sure?' } %>
+      </div>
+    </div>
+  </div>
+    <% end %>
+  <div class="col-xs-4 col-xs-offset-2">
+    <%= link_to 'New Bookstore', new_bookstore_path %>
+  </div>
+<br>
+
+
