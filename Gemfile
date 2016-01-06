@@ -48,4 +48,4 @@ end
 group :production do
   gem 'pg'
   gen 'rails_12factor'
-
+end
