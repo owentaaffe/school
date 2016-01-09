@@ -7,7 +7,7 @@ Devise.setup do |config|
   # Devise will use the `secret_key_base` on Rails 4+ applications as its `secret_key`
   # by default. You can change it below and use your own secret key.
   # config.secret_key = 'a4960e0852ee973434eb0065e93ba4e4ae76e9f39cdc5cc031e510c09652a5f64baa5a047b933dcefec47829637898d112b94a25ed54ee0eb46ce14ec170a42a'
-
+  config.secret_key = '-- secret key --'
   # ==> Mailer Configuration
   # Configure the e-mail address which will be shown in Devise::Mailer,
   # note that it will be overwritten if you use your own mailer class
@@ -231,7 +231,7 @@ Devise.setup do |config|
   #
   # The "*/*" below is required to match Internet Explorer requests.
   # config.navigational_formats = ['*/*', :html]
-
+  
   # The default HTTP method used to sign out a resource. Default is :delete.
   config.sign_out_via = :delete
 
