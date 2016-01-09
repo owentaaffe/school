@@ -1,5 +1,5 @@
 class BookstoresController < ApplicationController
-  before_action :set_bookstore, only: [:show, :edit, :update, :destroy, :purchase]
+  before_action :set_bookstore, only: [:show, :edit, :update, :destroy, ]
 
   # GET /bookstores
   # GET /bookstores.json
@@ -20,22 +20,9 @@ class BookstoresController < ApplicationController
   # GET /bookstores/1/edit
   def edit
   end
-
-  # GET /bookstores/1/edit
   def purchase
-    @bookstore = Bookstore.find(bookstore_params)
-     respond_to do |format|
-       if @bookstore.purchase
-         format.html { redirect_to @bookstore, notice: 'Book was successfully purchased' }
-        format.json { render :show, status: :ok, location: @bookstore }
-      else
-         format.html { render :purchase}
-        format.json { render json: @bookstore.errors, status: :unprocessable_entity }
-      end
-    end
+   
   end
-
-
   # POST /bookstores
   # POST /bookstores.json
   def create
@@ -69,7 +56,7 @@ class BookstoresController < ApplicationController
   # DELETE /bookstores/1
   # DELETE /bookstores/1.json
   def destroy
-    @bookstore.destroy
+    @bookstores.destroy
     respond_to do |format|
       format.html { redirect_to bookstores_url, notice: 'Book was successfully destroyed.' }
       format.json { head :no_content }
@@ -79,12 +66,16 @@ class BookstoresController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_bookstore
-      @bookstore = Bookstore.find(params[:id])
-
+      @bookstores = Bookstore.find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def bookstore_params
       params.require(:bookstore).permit(:title, :description, :author, :price)
+
     end
-end
+    def purchase_params
+      params.require(:purchase).permit(:titles)
+    end
+  end
+

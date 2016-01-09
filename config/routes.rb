@@ -1,7 +1,15 @@
 Rails.application.routes.draw do
 
+  resources :classrooms
+  resources :tutors
+  resources :students
   devise_for :users
-  get 'purchase/index'
+  #, :skip => :registrations
+  #devise_for :admins, :skip => :sessions
+  #devise_for :employees, :skip => :sessions
+  #devise_for :students, :skip => :sessions
+  #devise_for :tutors, :skip => :sessions
+
 
   resources :surveys
   root 'welcome#index'
@@ -9,7 +17,8 @@ Rails.application.routes.draw do
   get 'contact', to: 'welcome#contact'
 
   resources :bookstores
-  get 'purchase', to: 'bookstores#purchase'
+  get '/bookstore/purchase', to: 'bookstores#purchase'
+  get '/bookstore/cashier', to: 'bookstores#cashier'
   resources :courses
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

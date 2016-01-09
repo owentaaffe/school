@@ -1,4 +1,4 @@
-<%= form_for(@course) do |f| %>
+
   <% if @course.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@course.errors.count, "error") %> prohibited this course from being saved:</h2>
@@ -11,21 +11,17 @@
     </div>
   <% end %>
 <div class='row'>
-  <div class="col-xs-12">
-  <div class='col-xs-offset-2 col-xs-12'>
+  <div class='col-xs-offset-2 col-xs-8'>
     <%= form_for(@course, :html => {class: "form-horizontal", role: "form"}) do |f| %>
     <div class="form-group">
       <div class="control-label  col-xs-2">
         <%= f.label :title %>
       </div>
       <div class="control-label  col-xs-8">
-        <%= f.text_field :title, class: "form-control", placeholder: "title", autofocus: true %><hr>
+        <%= f.text_field :title, class: "form-control", placeholder: "title", autofocus: true %>
       </div>
-      <div class=" col-xs-2"><br>
-        <hr>
-      </div><br>
-    </div><br>
-      <div class="form-group"><br>
+    </div>
+      <div class="form-group">
         <div class="control-label col-xs-offset-2 col-xs-2">
           <%= f.label :Description %>
         </div>
@@ -33,8 +29,10 @@
           <%= f.text_area :description, class: "form-control", placeholder: "Description", autofocus: true %>
         </div>
       </div>
+    <div class="col-xs-offset-2 col-xs-2">
+      <button type="submit" class="btn btn-primary">Submit</button>
     </div>
-    <% end %>
   </div>
+  <% end %>
 </div>
-<% end %>
+

@@ -1,7 +1,6 @@
-<%= form_for(@bookstore) do |f| %>
-  <% if @bookstore.errors.any? %>
+ <% if @bookstore.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@bookstore.errors.count, "error") %> prohibited this bookstore from being saved:</h2>
+      <h2><%= pluralize(@bookstore.errors.count, "error") %> prohibited this Book from being saved:</h2>
 
       <ul>
       <% @bookstore.errors.full_messages.each do |message| %>
@@ -10,24 +9,49 @@
       </ul>
     </div>
   <% end %>
+<div class='row'>
+  <div class='col-xs-offset-2 col-xs-8'>
+    <%= form_for(@bookstore, :html => {class: "form-horizontal", role: "form"}) do |f| %>
+    <div class="form-group">
+      <div class="control-label  col-xs-2">
+        <%= f.label :title %>
+      </div>
+      <div class="control-label  col-xs-8">
+        <%= f.text_field :title, class: "form-control", placeholder: "title", autofocus: true %>
+      </div>
+    </div>
+      <div class="form-group">
+        <div class="control-label  col-xs-2">
+          <%= f.label :Description %>
+        </div>
+        <div class="control-label  col-xs-8">
+          <%= f.text_area :description, class: "form-control", placeholder: "Description", autofocus: true %>
+        </div>
+      </div>
+      <div class="form-group">
+      <div class="control-label  col-xs-2">
+        <%= f.label :Author %>
+      </div>
+      <div class="control-label  col-xs-8">
+        <%= f.text_field :author, class: "form-control", placeholder: "Author", autofocus: true %>
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="control-label  col-xs-2">
+        <%= f.label :Price %>
+      </div>
+      <div class="control-label  col-xs-8">
+        <%= f.text_field :price, class: "form-control", placeholder: "Price", autofocus: true %>
+      </div>
+    </div><br>
+    <div class="col-xs-offset-2 col-xs-2">
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </div>
+  </div>
+  <% end %>
+</div>
 
-  <div class="field">
-    <%= f.label :title %><br>
-    <%= f.text_field :title %>
-  </div>
-  <div class="field">
-    <%= f.label :description %><br>
-    <%= f.text_area :description %>
-  </div>
-  <div class="field">
-    <%= f.label :author %><br>
-    <%= f.text_field :author %>
-  </div>
-  <div class="field">
-    <%= f.label :price %><br>
-    <%= f.text_field :price %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
-<% end %>
+
+
+
+

@@ -1,20 +1,75 @@
-<h1 align="center">Purchase this book</h1>
-
+<h1 align="center">Purchase your Book here</h1>
 <p id="notice"><%= notice %></p>
-
-
-<div class="panel panel-default">
-  <div class="panel-heading"><strong>Title: </strong><%= @bookstore.title %></div>
-</div>
-  <div class="panel panel-default">
-    <div class="panel-body">
-      <strong>Description: </strong><%= @bookstore.description %><br>
-      <strong>Author: </strong><%= @bookstore.author %><br>
-      <strong>Price:</strong><%= @bookstore.price %>
+<div xlass="row">
+  <div class="col-xs-offset-2 col-xs-10">
+    <div class="panel panel-default">
+      <div class="panel-heading"><strong>Title: </strong></div>
     </div>
-  <div class="panel-footer">
-    <p><%= link_to 'Purchase', purchase_path, class: "btn btn-primary btn-lg" %> </p>
+    <div class="panel panel-default">
+      <div class="panel-body">
+        <strong>Description: </strong><br>
+        <strong>Author: </strong><br>
+        <strong>Price:</strong>
+      </div>
+    <div class="panel-footer">
+      <p><%= link_to 'Buy', bookstore_purchase_path, class: "btn btn-success btn-lg" %> |
+      <%= link_to 'Back', bookstores_path %></p>
+    </div>
   </div>
 </div>
-<%= link_to 'Edit', edit_bookstore_path(@bookstore) %> |
-<%= link_to 'Back', bookstores_path %>
+
+<div class="row">
+  <div class="col-md=8 cpl-md-offset-2">
+  <form class="form-horizontal">
+    <div class="form-group">
+      <label for="inputEmail3" class="col-sm-2 control-label">Full Name</label>
+      <div class="col-sm-10">
+        <input type="email" class="form-control" id="inputEmail3" placeholder="Name">
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="inputEmail3" class="col-sm-2 control-label">Address Line 1</label>
+      <div class="col-sm-10">
+        <input type="email" class="form-control" id="inputEmail3" placeholder="Address">
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="inputEmail3" class="col-sm-2 control-label">Address Line 2</label>
+      <div class="col-sm-10">
+        <input type="email" class="form-control" id="inputEmail3" placeholder="Address">
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="inputEmail3" class="col-sm-2 control-label">City/Town</label>
+      <div class="col-sm-10">
+        <input type="email" class="form-control" id="inputEmail3" placeholder="City/Town">
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="inputEmail3" class="col-sm-2 control-label">County</label>
+      <div class="col-sm-10">
+        <input type="email" class="form-control" id="inputEmail3" placeholder="County">
+      </div>
+    </div>
+     <div class="form-group">
+      <label for="inputPassword3" class="col-sm-2 control-label">country</label>
+      <div class="col-sm-10">
+        <input type="password" class="form-control" id="inputPassword3" placeholder="country">
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="inputPassword3" class="col-sm-2 control-label">Phone Number</label>
+      <div class="col-sm-10">
+        <input type="password" class="form-control" id="inputPassword3" placeholder="Phone Number">
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="col-sm-offset-2 col-sm-10">
+        <%= link_to 'Pay with Credit Card', bookstore_cashier_path, class: "btn btn-success btn-lg" %>
+        <%= link_to 'Pay with Pay Pal', bookstore_cashier_path, class: "btn btn-success btn-lg" %>
+      </div>
+    </div>
+  </form>
+  </div>
+</div>
+
