@@ -1,17 +1,7 @@
- <% if @bookstore.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@bookstore.errors.count, "error") %> prohibited this Book from being saved:</h2>
 
-      <ul>
-      <% @bookstore.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
 <div class='row'>
   <div class='col-xs-offset-2 col-xs-8'>
-    <%= form_for(@bookstore, :html => {class: "form-horizontal", role: "form"}) do |f| %>
+    <%= form_for(@bookstores, :html => {class: "form-horizontal", role: "form"}) do |f| %>
     <div class="form-group">
       <div class="control-label  col-xs-2">
         <%= f.label :title %>
