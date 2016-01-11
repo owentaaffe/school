@@ -1,15 +1,14 @@
 Rails.application.routes.draw do
 
+  devise_for :admins
+  get 'admin/home'
+
   devise_for :installs
   resources :classrooms
   resources :tutors
   resources :students
   devise_for :users
-  #, :skip => :registrations
-  #devise_for :admins, :skip => :sessions
-  #devise_for :employees, :skip => :sessions
-  #devise_for :students, :skip => :sessions
-  #devise_for :tutors, :skip => :sessions
+  
 
 
   resources :surveys

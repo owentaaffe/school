@@ -21,7 +21,7 @@ class BookstoresController < ApplicationController
   def edit
   end
   def purchase
-   
+
   end
   # POST /bookstores
   # POST /bookstores.json
@@ -43,8 +43,8 @@ class BookstoresController < ApplicationController
   # PATCH/PUT /bookstores/1.json
   def update
     respond_to do |format|
-      if @bookstore.update(bookstore_params)
-        format.html { redirect_to @bookstore, notice: 'Book was successfully updated.' }
+      if @bookstores.update(bookstore_params)
+        format.html { redirect_to @bookstores, notice: 'Book was successfully updated.' }
         format.json { render :show, status: :ok, location: @bookstore }
       else
         format.html { render :edit }

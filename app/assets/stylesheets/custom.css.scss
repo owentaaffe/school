@@ -1,3 +1,25 @@
 $navbar-default-bg: #000000;
 @import "bootstrap-sprockets";
 @import "bootstrap";
+
+.jumbotron {
+  background-image: asset-url('college.JPG');
+  background-size: cover;
+  color: #000;
+  font-family: 'Helvetica Neue' !important;
+  font-stretch: expanded;
+  padding-top: 25px;
+  padding-bottom: 25px;
+  margin-left: 15px;
+  margin-right: 15px;
+  text-shadow: -1px 0 #555, 0 1px #555, 1px 0 #555, 0 -1px #555;
+  h2
+  {
+    font-size: 35px !important;
+    .lead
+    {
+      font-family: 'Helvetica Neue' !important;
+      font-size: 30px !important;
+    }
+  }
+}
