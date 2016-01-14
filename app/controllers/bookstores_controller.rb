@@ -1,5 +1,5 @@
 class BookstoresController < ApplicationController
-  before_action :set_bookstore, only: [:show, :edit, :update, :destroy, ]
+  before_action :set_bookstore, only: [:show, :edit, :update, :destroy, :purchase]
 
   # GET /bookstores
   # GET /bookstores.json
@@ -20,14 +20,15 @@ class BookstoresController < ApplicationController
   # GET /bookstores/1/edit
   def edit
   end
+  
   def purchase
 
   end
+  
   # POST /bookstores
   # POST /bookstores.json
   def create
     @bookstore = Bookstore.new(bookstore_params)
-
     respond_to do |format|
       if @bookstore.save
         format.html { redirect_to @bookstore, notice: 'Book was successfully created.' }
@@ -66,16 +67,15 @@ class BookstoresController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_bookstore
-      @bookstores = Bookstore.find(params[:id])
+      @bookstore = Bookstore.find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def bookstore_params
       params.require(:bookstore).permit(:title, :description, :author, :price)
-
     end
     def purchase_params
-      params.require(:purchase).permit(:titles)
+      params.require(:bookstore).permit(:titles, :description, :author, :price)
     end
   end
 

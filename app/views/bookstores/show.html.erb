@@ -1,16 +1,7 @@
-<p id="notice"><%= notice %></p>
-<div class="panel panel-default">
-  <div class="panel-heading"><strong>Title: <%= @bookstores.title %></strong></div>
-</div>
-  <div class="panel panel-default">
-    <div class="panel-body">
-      <strong>Description: </strong><%= @bookstores.description %><br>
-      <strong>Author: </strong><%= @bookstores.author %><br>
-      <strong>Price:</strong><%= @bookstores.price %>
-    </div>
+<h1 align="center">Book details</h1>
+    <%= render 'parshow' %>
   <div class="panel-footer">
-    <p><%= link_to 'Buy', bookstore_purchase_path, class: "btn btn-success btn-lg" %> |
+    <p><%= link_to 'Buy', purchase_bookstore_path(@bookstore), class: "btn btn-success btn-lg" %> |
     <%= link_to 'Edit', edit_bookstore_path %> |
     <%= link_to 'Back', bookstores_path %></p>
   </div>
-</div>
