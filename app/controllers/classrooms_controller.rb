@@ -10,6 +10,7 @@ class ClassroomsController < ApplicationController
   # GET /classrooms/1
   # GET /classrooms/1.json
   def show
+
   end
 
   # GET /classrooms/new
@@ -65,10 +66,12 @@ class ClassroomsController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_classroom
       @classroom = Classroom.find(params[:id])
+
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def classroom_params
       params.require(:classroom).permit(:course_id, :tutor_id, :student_id)
+      
     end
 end

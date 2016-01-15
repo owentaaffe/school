@@ -1,4 +1,5 @@
 class BookstoresController < ApplicationController
+
   before_action :set_bookstore, only: [:show, :edit, :update, :destroy, :purchase]
 
   # GET /bookstores
@@ -20,11 +21,11 @@ class BookstoresController < ApplicationController
   # GET /bookstores/1/edit
   def edit
   end
-  
+
   def purchase
 
   end
-  
+
   # POST /bookstores
   # POST /bookstores.json
   def create
