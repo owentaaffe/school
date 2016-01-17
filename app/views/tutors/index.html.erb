@@ -1,14 +1,15 @@
 <p id="notice"><%= notice %></p>
-
-<h1>Listing Tutors</h1>
-
+<div align="center">
+  <h1>Listing Tutors</h1>
+  <%= will_paginate %>
+</div>
 <table class="table table-striped">
   <thead>
     <tr>
+      <th>Tutor Id:</th>
       <th>First name</th>
       <th>Last name</th>
-      <th>Email</th>
-      <th>User</th>
+      <th>Email</th> 
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -16,10 +17,10 @@
   <tbody>
     <% @tutors.each do |tutor| %>
       <tr>
+        <td><%= tutor.id %></td>
         <td><%= tutor.first_name %></td>
         <td><%= tutor.last_name %></td>
-        <td><%= tutor.email %></td>
-        <td><%= tutor.user_id %></td>
+        <td><%= tutor.email %></td> 
         <td><%= link_to 'Show', tutor %> |
         <%= link_to 'Edit', edit_tutor_path(tutor) %> |
         <%= link_to 'Destroy', tutor, method: :delete, data: { confirm: 'Are you sure?' } %></td>
@@ -27,7 +28,9 @@
     <% end %>
   </tbody>
 </table>
-
+<div align="center">
+  <%= will_paginate %>
+</div>
 <br>
 
 <%= link_to 'New Tutor', new_tutor_path %>

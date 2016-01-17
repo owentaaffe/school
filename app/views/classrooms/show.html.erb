@@ -1,9 +1,12 @@
 <p id="notice"><%= notice %></p>
 
+
 <p>
   <strong>Course:</strong>
   <%= @classroom.course_id %>
 </p>
+
+
 
 <p>
   <strong>Tutor:</strong>
@@ -11,10 +14,29 @@
 </p>
 
 <p>
+  <strong>Tutor last name:</strong>
+  <%= @classroom.tutor.last_name %>
+</p>
+
+<p>
+  <strong>Tutor first name:</strong>
+  <%= @classroom.tutor.first_name %>
+</p>
+
+<p>
   <strong>Student:</strong>
   <%= @classroom.student_id %>
 </p>
 
+<p>
+  <strong>Student last name:</strong>
+  <%= @classroom.student.last_name %>
+</p>
+
+<p>
+  <strong>Student first name:</strong>
+  <%= @classroom.student.first_name %>
+</p>
 
 <%= link_to 'Edit', edit_classroom_path(@classroom) %> |
 <%= link_to 'Back', classrooms_path %>

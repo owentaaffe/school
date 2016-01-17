@@ -1,7 +1,9 @@
 <p id="notice"><%= notice %></p>
-
-<h1>Listing Surveys</h1>
-<table class="table table-hover">
+<div align="center">
+  <h1>Listing Surveys</h1>
+  <%= will_paginate %>
+</div>
+<table class="table table-striped">
   <thead>
     <tr>
       <th>Q1</th>
@@ -25,14 +27,16 @@
         <td><%= survey.Q5 %></td>
         <td><%= survey.Q6 %></td>
         <td><%= survey.Q %></td>
-        <td><%= link_to 'Show', survey %></td>
-        <td><%= link_to 'Edit', edit_survey_path(survey) %></td>
-        <td><%= link_to 'Destroy', survey, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Show', survey %> |
+        <%= link_to 'Edit', edit_survey_path(survey) %> |
+        <%= link_to 'Destroy', survey, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
-
+<div align="center">
+  <%= will_paginate %>
+</div>
 <br>
 
 <%= link_to 'New Survey', new_survey_path %>

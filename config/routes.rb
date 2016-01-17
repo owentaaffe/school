@@ -1,10 +1,11 @@
 Rails.application.routes.draw do
 
+  resources :classrooms
+  resources :classrooms
   devise_for :admins
   get 'admin/home'
 
   devise_for :installs
-  resources :classrooms
   resources :tutors
   resources :students
   devise_for :users

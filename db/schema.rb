@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160115102621) do
+ActiveRecord::Schema.define(version: 20160117111851) do
 
   create_table "admins", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
@@ -42,14 +42,19 @@ ActiveRecord::Schema.define(version: 20160115102621) do
 
   create_table "classrooms", force: :cascade do |t|
     t.integer  "course_id"
-    t.string   "tutor_id"
-    t.string   "student_id"
-    t.datetime "created_at",        null: false
-    t.datetime "updated_at",        null: false
-    t.string   "course_title"
-    t.string   "student_last_name"
+    t.integer  "tutor_id"
     t.string   "tutor_last_name"
+    t.string   "tutor_first_name"
+    t.integer  "student_id"
+    t.string   "student_last_name"
+    t.string   "student_first_name"
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
   end
+
+  add_index "classrooms", ["course_id"], name: "index_classrooms_on_course_id"
+  add_index "classrooms", ["student_id"], name: "index_classrooms_on_student_id"
+  add_index "classrooms", ["tutor_id"], name: "index_classrooms_on_tutor_id"
 
   create_table "courses", force: :cascade do |t|
     t.string   "title"

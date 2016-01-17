@@ -6,6 +6,7 @@ class BookstoresController < ApplicationController
   # GET /bookstores.json
   def index
     @bookstores = Bookstore.all
+    @bookstores = Bookstore.paginate(page: params[:page], per_page: 3)
   end
 
   # GET /bookstores/1

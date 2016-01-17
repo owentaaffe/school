@@ -1,11 +1,25 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
+  course_id: 
   course_id: 1
-  tutor_id: MyString
-  student_id: MyString
+  tutor_id: 
+  tutor_id: 1
+  tutor_last_name: MyString
+  tutor_first_name: MyString
+  student_id: 
+  student_id: 1
+  student_last_name: MyString
+  student_first_name: MyString
 
 two:
+  course_id: 
   course_id: 1
-  tutor_id: MyString
-  student_id: MyString
+  tutor_id: 
+  tutor_id: 1
+  tutor_last_name: MyString
+  tutor_first_name: MyString
+  student_id: 
+  student_id: 1
+  student_last_name: MyString
+  student_first_name: MyString

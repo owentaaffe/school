@@ -1,5 +1,8 @@
-<h1 align="center">Listing books</h1>
-<h4 align="center"><%= link_to 'Add new book', new_bookstore_path %></h4><br>
+<div align="center">
+  <h1>Listing books</h1>
+  <p><%= link_to 'Add new book', new_bookstore_path %></p>
+  <%= will_paginate %>
+</div>
   <% @bookstores.each do |bookstore| %>
   <div class="row">
     <div class="col-xs-offset-1 col-xs-10 ">
@@ -22,6 +25,8 @@
       </div>
     </div>
   </div>
+<div align="center"><%= will_paginate %></div>
+
     <% end %>
   <div class="col-xs-4 col-xs-offset-2">
     <%= link_to 'New Bookstore', new_bookstore_path %>

@@ -1,6 +1,5 @@
 class Classroom < ActiveRecord::Base
-  has_many :tutors
-  has_many :students
-  has_many :courses
-
+  belongs_to :course
+  belongs_to :tutor
+  belongs_to :student
 end
