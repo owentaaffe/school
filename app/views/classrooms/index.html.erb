@@ -1,20 +1,27 @@
 <p id="notice"><%= notice %></p>
 
 <h1 align="center">Listing Classrooms</h1>
+<%= form_tag classrooms_path, :method => 'get', :last_name => "students_search" do %>
+  <p>
+    <%= text_field_tag :search, params[:search] %>
+    <%= submit_tag "Search Students", :name => nil %>
+  </p>
+  <div id="classrooms"><%= render 'classrooms' %></div>
+<% end %>
 
-<table class="table table-striped">
-  <thead>
-    <tr>
-      <th>Course :id</th>
-      <th>Tutor :id</th>
-      <th>:last name</th>
-      <th>:first name</th>
-      <th>Student :id </th>
-      <th>:last name</th>
-      <th>:first name</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+<table class="table table-striped",>
+    <thead>
+      <tr>
+        <th><%= sort_link "course_id", "Course id" %></th>
+        <th><%= sort_link "tutor_id", "Tutor id" %></th>
+        <th><%= sort_link "tutor_last_name", "Last name" %></th>
+        <th><%= sort_link "tutor_first_name", "first_name" %></th>
+        <th><%= sort_link "student_id", "Student id" %></th>
+        <th><%= sort_link "student_last_name", "last_name" %></th>
+        <th><%= sort_link "student_first_name", "first_name" %></th>
+        <th colspan="8"></th>
+      </tr>
+    </thead>
 
   <tbody>
     <% @classrooms.each do |classroom| %>
@@ -33,9 +40,10 @@
     <% end %>
   </tbody>
 </table>
-
 <br>
 | <%= link_to 'New Classroom', new_classroom_path %> |
 <%= link_to 'Courses', courses_path %> |
 <%= link_to 'Students', students_path %> |
 <%= link_to 'Tutors', tutors_path %> |
+
+
