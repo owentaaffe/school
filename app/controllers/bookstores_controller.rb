@@ -5,7 +5,7 @@ class BookstoresController < ApplicationController
   # GET /bookstores
   # GET /bookstores.json
   def index
-    @bookstores = Bookstore.all
+    @bookstore = Bookstore.all
     @bookstores = Bookstore.paginate(page: params[:page], per_page: 3)
   end
 
@@ -45,11 +45,12 @@ class BookstoresController < ApplicationController
   # PATCH/PUT /bookstores/1
   # PATCH/PUT /bookstores/1.json
   def update
+    cd 
     respond_to do |format|
-      if @bookstores.update(bookstore_params)
-        format.html { redirect_to @bookstores, notice: 'Book was successfully updated.' }
+      if @bookstore.update(bookstore_params)
+        format.html { redirect_to @bookstore, notice: 'Book was successfully updated.' }
         format.json { render :show, status: :ok, location: @bookstore }
-      else
+      else 
         format.html { render :edit }
         format.json { render json: @bookstore.errors, status: :unprocessable_entity }
       end

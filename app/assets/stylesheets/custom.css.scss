@@ -23,17 +23,3 @@ $navbar-default-bg: #000000;
     }
   }
 }
-
-.pretty th .current {
-  padding-right: 12px;
-  background-repeat: no-repeat;
-  background-position: right center;
-}
-
-.pretty th .asc {
-  background-image: url(assets/images/'arrow_up.png');
-}
-
-.pretty th .desc {
-  background-image: url(assets/images/'arrow_down.png');
-}

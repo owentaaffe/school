@@ -16,14 +16,3 @@
 //= require bootstrap-sprockets
 //= require turbolinks
 //= require_tree .
-
-$(function() {
-  $("#classrooms th a, #classrooms .pagination a").live("click", function() {
-    $.getScript(this.href);
-    return false;
-  });
-  $("#students_search input").keyup(function() {
-    $.get($("#students_search").attr("action"), $("#students_search").serialize(), null, "script");
-    return false;
-  });
-});
