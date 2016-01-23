@@ -7,6 +7,6 @@ class User < ActiveRecord::Base
   has_many :students
   has_many :tutors
   has_one  :admin
-  validates :name, presence: true, length: { minimun: 2, maximum: 50}
-  
+  validates :email, presence: true, length: { minimun: 10, maximum: 250}
+
 end
